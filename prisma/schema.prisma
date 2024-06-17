@@ -13,4 +13,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
+// Definiendo tablas en prisma
+model Usuario {
+  id Int @id @default(autoincrement())
+  nombre String 
+  email String @unique
+  password String
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
